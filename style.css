@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #cfe3dc;
+  color: #333;
+  line-height: 1.6;
+}
+
+ .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.texto-header {
+  text-align: left;
+}
+
+header {
+  background-color: #cfe3dc;
+  text-align: center;
+  padding: 30px 20px;
+}
+  
+header h1 {
+  font-size: 2.5rem;
+  color: #2e5d51;
+}
+  
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #4a7c74;
+}
+  
+nav ul {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+  
+nav a {
+  text-decoration: none;
+  color: #2e5d51;
+  font-weight: bold;
+}
+  
+nav a:hover {
+  text-decoration: underline;
+}
+  
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+  
+.sobre h2 {
+  font-size: 2rem;
+  color: #2e5d51;
+  margin-bottom: 15px;
+}
+  
+.sobre p {
+  font-size: 1.1rem;
+}
+
+.agendamento {
+  background-color: #cfe3dc;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.duvidas ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+  
+footer {
+  background-color: #2e5d51;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+nav ul li a {
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+nav ul li a:hover {
+  background-color: #f0f8ff;
+  color: #0056b3;
+}
+
+.foto-terapia{
+  width: 500px;
+  height: 500px;
+  border: 3px solid #ccc;
+  display: flex;
+  margin-left: auto;
+}
+  
+@media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+}
+  
+nav ul {
+    flex-direction: column;
+    gap: 15px;
+}
+  
+.sobre p {
+    font-size: 1rem;
+  }
+}
+  
+@media (max-width: 480px) {
+  main {
+    padding: 20px;
+}
+  
+header p {
+  font-size: 1rem;
+}
+  
+.sobre h2 {
+  font-size: 1.5rem;
+  }
+}
+  

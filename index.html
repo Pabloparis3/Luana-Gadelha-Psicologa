@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="psy.png" type="image/x-icon">
+  <title>Luana Gadelha - Psicóloga</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<script>
+  // Seleciona todos os links do menu
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  navLinks.forEach(link => {
+    // Efeito ao passar o mouse
+    link.addEventListener("mouseenter", () => {
+      link.style.backgroundColor = "#f0f8ff";
+      link.style.transition = "background-color 0.3s";
+    });
+
+    // Remove efeito ao sair do mouse
+    link.addEventListener("mouseleave", () => {
+      link.style.backgroundColor = "transparent";
+    });
+
+    // Ação ao clicar
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+
+      if (href.includes("certificate")) {
+        alert("Abrindo o certificado de Terapia do Esquema...");
+      } else if (href.includes("instagram.com")) {
+        console.log("Redirecionando para o Instagram...");
+      }
+    });
+  });
+</script>
+
+<body>
+  <header>
+    <div class="logo-container">
+    <img src="luana.jpg" alt="Foto de Luana Gadelha" class="foto-perfil" />
+    <div class="texto-header">
+      <h1>Luana Gadelha</h1>
+      <p>Psicóloga - Cédula ordem dos psicólogos portugueses -  134486</p>
+    </div>
+  </div>
+  </header>
+
+  <main>
+    <section class="sobre">
+      <h2>Sobre Mim</h2>
+      <p>
+        Olá, sou Luana Gadelha, Graduada em Psicologia pela Faculdade de Ciências Humanas de Olinda(Brasil), com reconhecimento de diploma
+        realizado na Universidade do Minho (Portugal). Atuo como Psicóloga clínica com abordagem baseada na Teoria do Esquema. 
+        Especializada em ajudar pessoas a se reconectarem com suas emoções, ressignificarem suas histórias 
+        e construírem uma vida com mais autenticidade e bem-estar. Atendo de forma online e presencial, 
+        com base na Terapia do Esquema: uma abordagem profunda e integrativa, voltada para quem deseja 
+        mudanças reais e duradouras.
+      </p>
+      <p></p>
+    <nav>
+      <ul>
+        <li><a href="https://www.instagram.com/psi.luanagadelha/?igsh=MzJ6dWsweDJ0aDd0&utm_source=qr#"
+         target="_blank">Instagram</a></li>
+        <li><a href="certificate_terapia do esquema.pdf" target="_blank">Certificado</a></li>
+      </ul>
+    </nav>
+    </section>
+  </main>
+
+<section class="agendamento">
+      <div class="duvidas">
+        <h2>Dúvidas Comuns</h2>
+        <ul>
+          <li>O que é a Terapia do Esquema?</li>
+          <li>Como identificar seus esquemas precoces?</li>
+          <li>Por que repetir padrões nos relacionamentos?</li>
+          <li>Como a terapia ajuda na ansiedade?</li>
+        </ul>
+      </div>
+
+      <div class="form-container">
+        <h3>Agende sua sessão</h3>
+        <p>Entre em contato para saber valores e disponibilidade de horários.</p>
+        <form id="formAgendamento">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" required />
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" required />
+
+          <label for="data">Data:</label>
+          <input type="date" id="data" required />
+
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" required />
+
+          <button type="submit">Enviar via WhatsApp</button>
+        </form>
+      </div>
+</section>
+
+<script>
+  const abrirModal = document.getElementById("abrirModal");
+  const modal = document.getElementById("modalAgendamento");
+  const fecharModal = document.querySelector(".fechar");
+  const form = document.getElementById("formAgendamento");
+
+  abrirModal.onclick = () => modal.style.display = "block";
+  fecharModal.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+
+  form.onsubmit = (e) => {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const data = document.getElementById("data").value;
+
+    const numeroWhatsApp = "351925318668"; 
+    
+    const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar uma sessão para o dia ${data} às ${hora}. Meu e-mail é ${email}.`;
+    const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(link, "_blank"); 
+    form.reset();
+    modal.style.display = "none";
+  };
+
+</script>
+
+  <footer>
+    <p>Atendimento Online e Presencial - Aveiro, Portugal</p>
+  </footer>
+</body>
+</html>
