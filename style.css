@@ -109,7 +109,7 @@ nav ul li a:hover::after {
   margin: 2rem auto 2rem 0; 
   padding: 1rem 0;
   background-color: transparent;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .atendo ul {
@@ -127,7 +127,7 @@ nav ul li a:hover::after {
   margin: 0 auto 1rem 0;
   padding: 1rem 0;
   line-height: 1.7;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #2c3e30; 
 }
 
@@ -151,7 +151,7 @@ main {
 }
 
 .sobre p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #444; /* 🔧 Sugestão: contraste melhorado */
 }
 
@@ -211,6 +211,14 @@ form button:hover {
   background-color: #3b5f45;
 }
 
+.sobre p,
+.duvidas p,
+.atendo,
+form textarea {
+  text-align: justify;
+  hyphens: auto;
+}
+
 
 /* Footer */
 footer {
@@ -249,7 +257,6 @@ footer {
   }
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
