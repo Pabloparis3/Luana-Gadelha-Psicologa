@@ -62,28 +62,79 @@ header p {
 }
 
 /* Navegação */
-nav ul {
-  list-style: none;
-  margin-top: 20px;
+nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-nav a {
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+nav ul li a {
   text-decoration: none;
-  color: #2e5d51;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background 0.3s ease;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  background-color: #e3f0df; /* ✅ Alterado: cor de fundo harmoniosa */
-  color: #005840;
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0077aa;
+  transition: width 0.3s ease;
 }
+
+nav ul li a:hover {
+  color: #0077aa;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.atendo {
+  text-align: left;
+  max-width: 700px;
+  margin: 2rem auto 2rem 0; 
+  padding: 1rem 0;
+  background-color: transparent;
+  font-size: 1.1rem;
+}
+
+.atendo ul {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.atendo li {
+  margin-bottom: 0.6rem;
+}
+
+.sessao {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto 1rem 0;
+  padding: 1rem 0;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #2c3e30; 
+}
+
+.sessao p {
+  margin-bottom: 1.5rem;
+}
+
 
 /* Conteúdo principal */
 main {
@@ -104,80 +155,62 @@ main {
   color: #444; /* 🔧 Sugestão: contraste melhorado */
 }
 
-/* Seção de Agendamento */
+.duvidas {
+  font-size: 1.1rem;
+  color: #444; 
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px 0;
+}
+
 .agendamento {
-  background-color: #f4f9ee;
-  padding: 30px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  max-width: 1200px;
+  padding: 40px;
   flex-wrap: wrap;
 }
 
-/* Lista de dúvidas */
-.duvidas {
-  padding-left: 20px;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
-  color: #2e5d51;
-  list-style-type: disc;
-  flex: 1;
-  min-width: 250px;
-}
 
-.duvidas ul {
-  padding-left: 20px;
-  line-height: 2; 
-}
-
-/* Formulário */
 .form-container {
-  max-width: 500px;
-  margin: auto;
+  max-width: 400px;
+  width: 100%;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
 }
 
-input, button {
-  padding: 12px;
+form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 8px;
+  margin-top: 4px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
 }
 
-input:focus {
-  outline: none;
-  border-color: #88b04b; /* 🔧 Sugestão: destaca campo ativo */
-  box-shadow: 0 0 5px rgba(136, 176, 75, 0.5);
-}
-
-/* Botão */
-button {
-  background-color: #45ab5d;
+form button {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background-color: #4c7353;
   color: white;
-  padding: 12px 20px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease;
-  white-space: nowrap;
-  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-button:hover {
-  background-color: #218838;
-  transform: scale(1.05);
+form button:hover {
+  background-color: #3b5f45;
 }
+
 
 /* Footer */
 footer {
@@ -206,28 +239,6 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-}
-
-#foto-terapia {
-  width: 280px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#abrirModal {
-  background-color: #45ab5d;
-  color: white;
-  padding: 12px 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-#abrirModal:hover {
-  background-color: #218838;
-  transform: scale(1.05);
 }
 
 @media (max-width: 900px) {
