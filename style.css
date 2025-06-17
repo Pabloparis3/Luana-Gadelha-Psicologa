@@ -1,17 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #cfe3dc;
-  color: #333;
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
- .logo-container {
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #DDE9D0;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth; /* 🔧 Sugestão: melhora a navegação com âncoras */
+}
+
+/* Header e logo */
+.logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,25 +39,29 @@ body {
 
 .texto-header {
   text-align: left;
+  max-width: 500px;
 }
 
+/* ✅ Alterado: cor e sombra para separar visualmente o header */
 header {
-  background-color: #cfe3dc;
+  background-color: #DDE9D0;
   text-align: center;
   padding: 30px 20px;
+  border-bottom: 2px solid #c4d7b2; /* 🔧 Sugestão */
 }
-  
+
 header h1 {
   font-size: 2.5rem;
   color: #2e5d51;
 }
-  
+
 header p {
   font-size: 1.2rem;
   margin-top: 10px;
   color: #4a7c74;
 }
-  
+
+/* Navegação */
 nav ul {
   list-style: none;
   margin-top: 20px;
@@ -64,44 +70,72 @@ nav ul {
   gap: 30px;
   flex-wrap: wrap;
 }
-  
+
 nav a {
   text-decoration: none;
   color: #2e5d51;
   font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
-  
+
 nav a:hover {
-  text-decoration: underline;
+  background-color: #e3f0df; /* ✅ Alterado: cor de fundo harmoniosa */
+  color: #005840;
 }
-  
+
+/* Conteúdo principal */
 main {
   padding: 40px 20px;
   max-width: 900px;
   margin: auto;
 }
-  
+
+/* Seção Sobre */
 .sobre h2 {
   font-size: 2rem;
   color: #2e5d51;
   margin-bottom: 15px;
 }
-  
+
 .sobre p {
   font-size: 1.1rem;
+  color: #444; /* 🔧 Sugestão: contraste melhorado */
 }
 
+/* Seção de Agendamento */
 .agendamento {
-  background-color: #cfe3dc;
+  background-color: #f4f9ee;
   padding: 30px;
-  margin-top: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+/* Lista de dúvidas */
+.duvidas {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  color: #2e5d51;
+  list-style-type: disc;
+  flex: 1;
+  min-width: 250px;
 }
 
 .duvidas ul {
   padding-left: 20px;
-  margin-bottom: 20px;
+  line-height: 2; 
 }
 
+/* Formulário */
 .form-container {
   max-width: 500px;
   margin: auto;
@@ -110,78 +144,131 @@ main {
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 input, button {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
+input:focus {
+  outline: none;
+  border-color: #88b04b; /* 🔧 Sugestão: destaca campo ativo */
+  box-shadow: 0 0 5px rgba(136, 176, 75, 0.5);
+}
+
+/* Botão */
 button {
-  background-color: #28a745;
-  color: #fff;
-  cursor: pointer;
-  transition: background 0.3s;
+  background-color: #45ab5d;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  text-align: center;
 }
 
 button:hover {
   background-color: #218838;
+  transform: scale(1.05);
 }
-  
+
+/* Footer */
 footer {
-  background-color: #2e5d51;
+  background-color: #9BAE89;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
 }
 
-nav ul li a {
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-nav ul li a:hover {
-  background-color: #f0f8ff;
-  color: #0056b3;
-}
-
-.foto-terapia{
-  width: 500px;
-  height: 500px;
+/* Imagem de terapia */
+#foto-terapia {
+  width: 100%;
+  max-width: 300px; /* melhor proporção para nitidez e tamanho */
+  height: auto; /* mantém proporção original da imagem */
   border: 3px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  display: block;
+  object-fit: cover; /* garante corte proporcional, se necessário */
+}
+
+.foto-container {
   display: flex;
-  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-  
-@media (max-width: 768px) {
-    header h1 {
-      font-size: 2rem;
+
+#foto-terapia {
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-  
-nav ul {
+
+#abrirModal {
+  background-color: #45ab5d;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#abrirModal:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .agendamento {
     flex-direction: column;
-    gap: 15px;
-}
-  
-.sobre p {
-    font-size: 1rem;
+    align-items: center;
+    text-align: center;
   }
 }
-  
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .sobre p {
+    font-size: 1rem;
+  }
+
+  .foto-perfil {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 @media (max-width: 480px) {
   main {
     padding: 20px;
-}
-  
-header p {
-  font-size: 1rem;
-}
-  
-.sobre h2 {
-  font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .sobre h2 {
+    font-size: 1.5rem;
   }
 }
-  
