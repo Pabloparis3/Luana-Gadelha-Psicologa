@@ -6,7 +6,7 @@
   <link rel="icon" href="psy.png" type="image/x-icon">
   <title>Luana Gadelha - Psicóloga</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+</head> 
 
 <script>
   // Seleciona todos os links do menu
@@ -52,7 +52,7 @@
     <section class="sobre">
       <h2>Sobre Mim</h2>
       <p>
-        Olá, sou Luana Gadelha, Graduada em Psicologia pela Faculdade de Ciências Humanas de Olinda(Brasil), com reconhecimento de diploma
+        Olá, sou Luana Gadelha, Graduada em Psicologia pela Faculdade de Ciências Humanas de Olinda (Brasil), com reconhecimento de diploma
         realizado na Universidade do Minho (Portugal). Atuo como Psicóloga clínica com abordagem baseada na Teoria do Esquema. 
         Especializada em ajudar pessoas a se reconectarem com suas emoções, ressignificarem suas histórias 
         e construírem uma vida com mais autenticidade e bem-estar. Atendo de forma online e presencial, 
@@ -80,57 +80,79 @@
           <li>Como a terapia ajuda na ansiedade?</li>
         </ul>
       </div>
+      <div class="foto-container">
+        <img src="contatopsi.jpg" alt="Ilustração de Terapia" id="foto-terapia"/>
+        <button id="abrirModal">Entre em Contato</button>
+      </div>
 
-      <div class="form-container">
-        <h3>Agende sua sessão</h3>
-        <p>Entre em contato para saber valores e disponibilidade de horários.</p>
+    <!-- Modal -->
+    <div id="modalAgendamento">
+      <div class="botao-contato">
+        <span class="fechar">&times;</span>
         <form id="formAgendamento">
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" required />
+          <input type="text" id="nome" name="nome" required />
 
           <label for="email">E-mail:</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" name="email" required />
 
-          <label for="data">Data:</label>
-          <input type="date" id="data" required />
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
 
-          <label for="hora">Hora:</label>
-          <input type="time" id="hora" required />
-
-          <button type="submit">Enviar via WhatsApp</button>
+          <button type="submit">Enviar</button>
         </form>
       </div>
-</section>
+    </div>
+  </section>
 
+<!-- EmailJS v3 oficial (correto) -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  const abrirModal = document.getElementById("abrirModal");
-  const modal = document.getElementById("modalAgendamento");
-  const fecharModal = document.querySelector(".fechar");
-  const form = document.getElementById("formAgendamento");
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init('bYWF-4l-TWEBcPH9p'); // sua public key
 
-  abrirModal.onclick = () => modal.style.display = "block";
-  fecharModal.onclick = () => modal.style.display = "none";
-  window.onclick = (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  };
+    const abrirModal = document.getElementById("abrirModal");
+    const modal = document.getElementById("modalAgendamento");
+    const fecharModal = document.querySelector(".fechar");
+    const form = document.getElementById("formAgendamento");
 
-  form.onsubmit = (e) => {
-    e.preventDefault();
+    abrirModal.addEventListener("click", () => modal.style.display = "flex");
+    fecharModal.addEventListener("click", () => modal.style.display = "none");
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
 
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const data = document.getElementById("data").value;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    const numeroWhatsApp = "351925318668"; 
-    
-    const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar uma sessão para o dia ${data} às ${hora}. Meu e-mail é ${email}.`;
-    const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
 
-    window.open(link, "_blank"); 
-    form.reset();
-    modal.style.display = "none";
-  };
+      if (!nome || !email || !mensagem) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
 
+      const templateParams = {
+        name: nome,
+        email: email,
+        message: mensagem
+      };
+
+      emailjs.send("service_73ysnvk", "template_42lecuq", templateParams)
+        .then(response => {
+          console.log("EmailJS response:", response);
+          alert("Mensagem enviada com sucesso!");
+          form.reset();
+          modal.style.display = "none";
+        })
+        .catch(error => {
+          console.error("Erro EmailJS:", error);
+          alert("Erro ao enviar a mensagem.");
+        });
+    });
+  });
 </script>
 
   <footer>
