@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -6,133 +6,109 @@
   <link rel="icon" href="psy.png" type="image/x-icon">
   <title>Luana Gadelha - Psicóloga</title>
   <link rel="stylesheet" href="style.css" />
-</head> 
-
-<script>
-  // Seleciona todos os links do menu
-  const navLinks = document.querySelectorAll("nav ul li a");
-
-  navLinks.forEach(link => {
-    // Efeito ao passar o mouse
-    link.addEventListener("mouseenter", () => {
-      link.style.backgroundColor = "#f0f8ff";
-      link.style.transition = "background-color 0.3s";
-    });
-
-    // Remove efeito ao sair do mouse
-    link.addEventListener("mouseleave", () => {
-      link.style.backgroundColor = "transparent";
-    });
-
-    // Ação ao clicar
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-
-      if (href.includes("certificate")) {
-        alert("Abrindo o certificado de Terapia do Esquema...");
-      } else if (href.includes("instagram.com")) {
-        console.log("Redirecionando para o Instagram...");
-      }
-    });
-  });
-</script>
+</head>
 
 <body>
   <header>
     <div class="logo-container">
-    <img src="luana.jpg" alt="Foto de Luana Gadelha" class="foto-perfil" />
-    <div class="texto-header">
-      <h1>Luana Gadelha</h1>
-      <p>Psicóloga - Cédula ordem dos psicólogos portugueses -  134486</p>
+      <img src="luana.jpg" alt="Foto de Luana Gadelha" class="foto-perfil" />
+      <div class="texto-header">
+        <h1>Psicóloga Luana Gadelha</h1>
+        <p>Inscrita na Ordem dos Psicólogos Portugueses — Cédula Profissional nº 134486</p>
+      </div>
     </div>
-  </div>
-  </header>
-
-  <main>
-    <section class="sobre">
-      <h2>Sobre Mim</h2>
-      <p>
-        Olá, sou Luana Gadelha, Graduada em Psicologia pela Faculdade de Ciências Humanas de Olinda (Brasil), com reconhecimento de diploma
-        realizado na Universidade do Minho (Portugal). Atuo como Psicóloga clínica com abordagem baseada na Teoria do Esquema. 
-        Especializada em ajudar pessoas a se reconectarem com suas emoções, ressignificarem suas histórias 
-        e construírem uma vida com mais autenticidade e bem-estar. Atendo de forma online e presencial, 
-        com base na Terapia do Esquema: uma abordagem profunda e integrativa, voltada para quem deseja 
-        mudanças reais e duradouras.
-      </p>
-      <p></p>
     <nav>
       <ul>
-        <li><a href="https://www.instagram.com/psi.luanagadelha/?igsh=MzJ6dWsweDJ0aDd0&utm_source=qr#"
-         target="_blank">Instagram</a></li>
+        <li><a href="#sobre">Sobre Mim</a></li>
+        <li><a href="#teoria">Esclarecimentos</a></li>
+        <li><a href="#contato">Entrar em Contato</a></li>
+        <li><a href="https://www.instagram.com/psi.luanagadelha/" target="_blank">Instagram</a></li>
         <li><a href="certificate_terapia do esquema.pdf" target="_blank">Certificado</a></li>
       </ul>
     </nav>
+  </header>
+
+  <main>
+    <section id="sobre" class="sobre">
+      <h2>Sobre Mim</h2>
+      <p>Olá, sou Luana Gadelha, psicóloga formada pela Faculdade de Ciências Humanas de Olinda (Brasil), com reconhecimento de diploma
+        realizado na Universidade do Minho (Portugal), CRP 134486, especializada em Terapia do Esquema — uma abordagem que ajuda a entender 
+        por que certos sentimentos e comportamentos se repetem e o que está por trás disso.</p>
     </section>
+
+<div class="atendo">
+  <p>Atendo principalmente adolescentes e jovens adultos que estão passando por:</p>
+
+<ul>
+  <li>Ansiedade, insegurança e crise de identidade.</li>
+  <li>Conflitos familiares e relacionamentos difíceis.</li>
+  <li>Uso excessivo de redes sociais, vício em internet ou jogos.</li>
+  <li>Automutilação, culpa ou sensação de vazio.</li>
+  <li>Dificuldade em confiar ou se abrir com os outros.</li>
+</ul>
+</div>
+
+<div class="sessao">
+  <p>Você não precisa enfrentar tudo isso sozinho(a). A terapia pode te ajudar a entender o que está acontecendo e encontrar caminhos 
+  para lidar 
+com suas dores emocionais.</p>
+
+  <p>💬 <strong>Como Funciona?</strong><br>
+  As sessões são semanais, com duração de 50 minutos, e podem ser:</p>
+
+  <p>📍 Online (via Google Meet ou Zoom).</p>
+  <p>📍 Presencial em Aveiro.</p>
+
+  <p>A primeira conversa é um momento de escuta — para você entender como funciona a terapia e decidir se esse é o lugar certo pra você.</p>
+</div>
+    <section id="teoria" class="duvidas">
+      <h2>Esclarecimentos sobre a Teoria do Esquema</h2>
+      <p>Você sente que está tudo bagunçado por dentro?
+      Talvez você esteja cansado(a), se sentindo sobrecarregado(a), perdido(a), com uma vontade de entender o que está acontecendo com você 
+      mas sem saber por onde começar.</p>
+      <p>A Terapia do Esquema é profunda, mas também flexível: usamos conversas, experiências emocionais, 
+      imagens, escrita, metáforas e técnicas criativas que se adaptam ao seu momento. Uma abordagem que ajuda a entender as raízes dos seus 
+      sentimentos e comportamentos — especialmente aqueles que se repetem e te fazem sofrer. A terapia é um lugar para descobrir quem você é, 
+      sem julgamentos.</p>
+      <p>Minha experiência clínica é focada em adolescentes e jovens adultos, uma fase da vida intensa, cheia de mudanças, pressões e dúvidas. 
+      Talvez você esteja enfrentando inseguranças, crises de identidade, conflitos com a família, dificuldades nas amizades, uso compulsivo 
+      das redes sociais ou até mesmo machucando a si mesmo para tentar aliviar a dor interna.</p>
+      <p>A Terapia do Esquema ajuda a entender de onde vem tudo isso. Muitas vezes, nossos sentimentos e comportamentos estão ligados a necessidades 
+      emocionais que não foram atendidas no passado. Na terapia, vamos identificar esses "esquemas" e trabalhar juntos para mudar o que te prende.</p>
+    </section>
+
+    <section id="contato" class="agendamento">
+  <div class="foto-container">
+    <img src="contatopsi.jpg" alt="Ilustração de Terapia" id="foto-terapia" />
+  </div>
+  <div class="form-container">
+    <form id="formAgendamento">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
   </main>
 
-<section class="agendamento">
-      <div class="duvidas">
-        <h2>Dúvidas Comuns</h2>
-        <ul>
-          <li>O que é a Terapia do Esquema?</li>
-          <li>Como identificar seus esquemas precoces?</li>
-          <li>Por que repetir padrões nos relacionamentos?</li>
-          <li>Como a terapia ajuda na ansiedade?</li>
-        </ul>
-      </div>
-      <div class="foto-container">
-        <img src="contatopsi.jpg" alt="Ilustração de Terapia" id="foto-terapia"/>
-        <button id="abrirModal">Entre em Contato</button>
-      </div>
+  <footer>
+    <p>&copy; 2025 Luana Gadelha. Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Modal -->
-    <div id="modalAgendamento">
-      <div class="botao-contato">
-        <span class="fechar">&times;</span>
-        <form id="formAgendamento">
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome" required />
-
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
-
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-<!-- EmailJS v3 oficial (correto) -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init('bYWF-4l-TWEBcPH9p'); // sua public key
+    emailjs.init('bYWF-4l-TWEBcPH9p');
 
-    const abrirModal = document.getElementById("abrirModal");
-    const modal = document.getElementById("modalAgendamento");
-    const fecharModal = document.querySelector(".fechar");
     const form = document.getElementById("formAgendamento");
 
-    // Mostrar o modal
-    abrirModal.addEventListener("click", () => modal.style.display = "flex");
-
-    // Fechar o modal ao clicar no X
-    fecharModal.addEventListener("click", () => modal.style.display = "none");
-
-    // Fechar o modal ao clicar fora
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    });
-
-    // Mostrar dica ao passar o mouse no X
-    fecharModal.addEventListener("mouseover", () => {
-      fecharModal.title = "Clique aqui para fechar o formulário";
-    });
-
-    // Envio do formulário
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -153,22 +129,15 @@
 
       emailjs.send("service_73ysnvk", "template_42lecuq", templateParams)
         .then(response => {
-          console.log("EmailJS response:", response);
           alert("Mensagem enviada com sucesso!");
           form.reset();
-          modal.style.display = "none";
         })
         .catch(error => {
-          console.error("Erro EmailJS:", error);
           alert("Erro ao enviar a mensagem.");
+          console.error(error);
         });
     });
   });
 </script>
-
-
-  <footer>
-    <p>Atendimento Online e Presencial - Aveiro, Portugal</p>
-  </footer>
 </body>
 </html>
